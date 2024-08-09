@@ -3,23 +3,21 @@ using manage_endpoints.Service.Interface;
 
 namespace manage_endpoints.Service;
 
-public class EndpointService : IEndpointService
+public class EndpointService : BaseService<Endpoint>, IEndpointService
 {
-    private readonly List<Endpoint> _endpoints = new List<Endpoint>();
-
     public void AddEndpoint(Endpoint endpoint)
     {
-        if (_endpoints.Any(e => e.SerialNumber == endpoint.SerialNumber))
+        if (_items.Any(e => e.SerialNumber == endpoint.SerialNumber))
         {
             throw new InvalidOperationException("Endpoint with the same serial number already exists.");
         }
 
-        _endpoints.Add(endpoint);
+        AddItem(endpoint);
     }
 
     public void EditEndpoint(string serialNumber, int switchState)
     {
-        var endpoint = _endpoints.SingleOrDefault(e => e.SerialNumber == serialNumber);
+        var endpoint = FindItemByCondition(e => e.SerialNumber == serialNumber);
 
         if (endpoint == null)
         {
@@ -31,23 +29,23 @@ public class EndpointService : IEndpointService
 
     public void DeleteEndpoint(string serialNumber)
     {
-        var endpoint = _endpoints.SingleOrDefault(e => e.SerialNumber == serialNumber);
+        var endpoint = FindItemByCondition(e => e.SerialNumber == serialNumber);
 
         if (endpoint == null)
         {
             throw new KeyNotFoundException("Endpoint not found.");
         }
 
-        _endpoints.Remove(endpoint);
+        _items.Remove(endpoint); // Directly use the list to remove the item
     }
 
-    public List<Endpoint> GetAllEndpoints()
+    public new List<Endpoint> GetAllEndpoints() // Hides the base method
     {
-        return _endpoints.ToList();
+        return GetAllItems(); // Use the base class method
     }
 
     public Endpoint FindEndpointBySerialNumber(string serialNumber)
     {
-        return _endpoints.SingleOrDefault(e => e.SerialNumber == serialNumber);
+        return FindItemByCondition(e => e.SerialNumber == serialNumber);
     }
 }

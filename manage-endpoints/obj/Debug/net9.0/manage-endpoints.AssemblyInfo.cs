@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("manage-endpoints")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28474b612c33b6763171a27c21c4f74e909bd5ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("manage-endpoints")]
 [assembly: System.Reflection.AssemblyTitleAttribute("manage-endpoints")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
