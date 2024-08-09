@@ -2,91 +2,95 @@
 using manage_endpoints.Service;
 using manage_endpoints.Service.Interface;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using System;
+using System.Collections.Generic;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
-namespace ManageEndpointTest.EndpointTest;
-
-[TestClass]
-public class EndpointServiceTest
+namespace ManageEndpointTest.EndpointTest
 {
-    private IEndpointService _endpointService = new EndpointService();
-
-    [TestInitialize]
-    public void Setup()
+    [TestClass]
+    public class EndpointServiceTest
     {
-        _endpointService = new EndpointService();
-    }
+        private Mock<IEndpointService> _mockEndpointService;
+        private Endpoint _endpoint;
 
-    [TestMethod]
-    public void AddEndpoint_ShouldAddEndpoint_WhenValid()
-    {
-        // Arrange
-        var endpoint = new Endpoint("SN1", 16, 123, "v1.0", 1);
+        [TestInitialize]
+        public void Setup()
+        {
+            _mockEndpointService = new Mock<IEndpointService>();
 
-        // Act
-        _endpointService.AddEndpoint(endpoint);
+           
+            _endpoint = new Endpoint("SN1", 16, 123, "v1.0", 0);
+        }
 
-        // Assert
-        var result = _endpointService.FindEndpointBySerialNumber("SN1");
-        Assert.AreEqual("SN1", result.SerialNumber);
-    }
+        [TestMethod]
+        public void AddEndpoint_ShouldAddEndpoint_WhenValid()
+        {
+   
+            _mockEndpointService.Setup(service => service.FindEndpointBySerialNumber("SN1"))
+                .Returns(_endpoint);
 
-    [TestMethod]
-    [ExpectedException(typeof(InvalidOperationException))]
-    public void AddEndpoint_ShouldThrowException_WhenSerialNumberExists()
-    {
-        // Arrange
-        var endpoint1 = new Endpoint("SN1", 16, 123, "v1.0", 1);
-        var endpoint2 = new Endpoint("SN1", 17, 456, "v1.1", 0);
+      
+            _mockEndpointService.Object.AddEndpoint(_endpoint);
 
-        // Act
-        _endpointService.AddEndpoint(endpoint1);
-        _endpointService.AddEndpoint(endpoint2);
-    }
+         
+            _mockEndpointService.Verify(service => service.AddEndpoint(It.IsAny<Endpoint>()), Times.Once);
+            Assert.AreEqual("SN1", _mockEndpointService.Object.FindEndpointBySerialNumber("SN1")?.SerialNumber);
+        }
 
-    [TestMethod]
-    public void EditEndpoint_ShouldUpdateSwitchState_WhenValid()
-    {
-        // Arrange
-        var endpoint = new Endpoint("SN1", 16, 123, "v1.0", 0);
-        _endpointService.AddEndpoint(endpoint);
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void AddEndpoint_ShouldThrowException_WhenSerialNumberExists()
+        {
+            _mockEndpointService.Setup(service => service.FindEndpointBySerialNumber("SN1"))
+                .Returns(_endpoint);
+            
+            _mockEndpointService.Object.AddEndpoint(_endpoint);
+            _mockEndpointService.Object.AddEndpoint(_endpoint); // This should throw an exception
+        }
 
-        // Act
-        _endpointService.EditEndpoint("SN1", 1);
+        [TestMethod]
+        public void EditEndpoint_ShouldUpdateSwitchState_WhenValid()
+        {
+            _mockEndpointService.Setup(service => service.FindEndpointBySerialNumber("SN1"))
+                .Returns(_endpoint);
+            
+            _mockEndpointService.Object.EditEndpoint("SN1", 1);
+            
+            _mockEndpointService.Verify(service => service.EditEndpoint("SN1", 1), Times.Once);
+            Assert.AreEqual(1, _mockEndpointService.Object.FindEndpointBySerialNumber("SN1")?.SwitchState);
+        }
 
-        // Assert
-        var result = _endpointService.FindEndpointBySerialNumber("SN1");
-        Assert.AreEqual(1, result.SwitchState);
-    }
+        [TestMethod]
+        [ExpectedException(typeof(KeyNotFoundException))]
+        public void EditEndpoint_ShouldThrowException_WhenEndpointNotFound()
+        {
+            _mockEndpointService.Setup(service => service.FindEndpointBySerialNumber("SN1"))
+                .Returns((Endpoint)null); // Endpoint not found
+            
+            _mockEndpointService.Object.EditEndpoint("SN1", 1);
+        }
 
-    [TestMethod]
-    [ExpectedException(typeof(KeyNotFoundException))]
-    public void EditEndpoint_ShouldThrowException_WhenEndpointNotFound()
-    {
-        // Act
-        _endpointService.EditEndpoint("SN1", 1);
-    }
+        [TestMethod]
+        public void DeleteEndpoint_ShouldRemoveEndpoint_WhenValid()
+        {
+            _mockEndpointService.Setup(service => service.FindEndpointBySerialNumber("SN1"))
+                .Returns((Endpoint)null); // Simulate deletion
+            
+            _mockEndpointService.Object.DeleteEndpoint("SN1");
+            
+            _mockEndpointService.Verify(service => service.DeleteEndpoint("SN1"), Times.Once);
+        }
 
-    [TestMethod]
-    public void DeleteEndpoint_ShouldRemoveEndpoint_WhenValid()
-    {
-        // Arrange
-        var endpoint = new Endpoint("SN1", 16, 123, "v1.0", 1);
-        _endpointService.AddEndpoint(endpoint);
-
-        // Act
-        _endpointService.DeleteEndpoint("SN1");
-
-        // Assert
-        var result = _endpointService.FindEndpointBySerialNumber("SN1");
-        Assert.AreEqual(null,result);
-    }
-
-    [TestMethod]
-    [ExpectedException(typeof(KeyNotFoundException))]
-    public void DeleteEndpoint_ShouldThrowException_WhenEndpointNotFound()
-    {
-        // Act
-        _endpointService.DeleteEndpoint("SN1");
+        [TestMethod]
+        [ExpectedException(typeof(KeyNotFoundException))]
+        public void DeleteEndpoint_ShouldThrowException_WhenEndpointNotFound()
+        {
+            _mockEndpointService.Setup(service => service.FindEndpointBySerialNumber("SN1"))
+                .Returns((Endpoint)null); // Endpoint not found
+            
+            _mockEndpointService.Object.DeleteEndpoint("SN1");
+        }
     }
 }

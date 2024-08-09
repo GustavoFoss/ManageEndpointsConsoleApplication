@@ -36,12 +36,12 @@ public class EndpointService : BaseService<Endpoint>, IEndpointService
             throw new KeyNotFoundException("Endpoint not found.");
         }
 
-        _items.Remove(endpoint); // Directly use the list to remove the item
+        _items.Remove(endpoint); 
     }
 
-    public new List<Endpoint> GetAllEndpoints() // Hides the base method
+    public new List<Endpoint> GetAllEndpoints()
     {
-        return GetAllItems(); // Use the base class method
+        return GetAllItems();
     }
 
     public Endpoint FindEndpointBySerialNumber(string serialNumber)

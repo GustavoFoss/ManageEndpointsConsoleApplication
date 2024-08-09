@@ -117,6 +117,10 @@
               "target": "Package",
               "version": "[17.9.0, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
             "NUnit": {
               "target": "Package",
               "version": "[4.0.1, )"

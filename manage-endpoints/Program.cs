@@ -40,6 +40,9 @@ class Program
                     Console.WriteLine("Invalid option.");
                     break;
             }
+            
+            Thread.Sleep(2000);
+            Console.WriteLine("");
         }
     }
     
