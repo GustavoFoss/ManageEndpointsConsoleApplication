@@ -1,0 +1,14 @@
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\bin\Debug\net9.0\manage-endpoints.exe
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\bin\Debug\net9.0\manage-endpoints.deps.json
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\bin\Debug\net9.0\manage-endpoints.runtimeconfig.json
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\bin\Debug\net9.0\manage-endpoints.dll
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\bin\Debug\net9.0\manage-endpoints.pdb
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\manage-endpoints.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\manage-endpoints.AssemblyInfoInputs.cache
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\manage-endpoints.AssemblyInfo.cs
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\manage-endpoints.csproj.CoreCompileInputs.cache
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\manage-endpoints.dll
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\refint\manage-endpoints.dll
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\manage-endpoints.pdb
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\manage-endpoints.genruntimeconfig.cache
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\ref\manage-endpoints.dll

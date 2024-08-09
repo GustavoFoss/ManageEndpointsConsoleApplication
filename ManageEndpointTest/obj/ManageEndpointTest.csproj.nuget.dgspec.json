@@ -1,0 +1,158 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\fossg\\RiderProjects\\manage-endpoints\\ManageEndpointTest\\ManageEndpointTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\fossg\\RiderProjects\\manage-endpoints\\manage-endpoints\\manage-endpoints.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\fossg\\RiderProjects\\manage-endpoints\\manage-endpoints\\manage-endpoints.csproj",
+        "projectName": "manage-endpoints",
+        "projectPath": "C:\\Users\\fossg\\RiderProjects\\manage-endpoints\\manage-endpoints\\manage-endpoints.csproj",
+        "packagesPath": "C:\\Users\\fossg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fossg\\RiderProjects\\manage-endpoints\\manage-endpoints\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\fossg\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.6.24328.19/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\fossg\\RiderProjects\\manage-endpoints\\ManageEndpointTest\\ManageEndpointTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\fossg\\RiderProjects\\manage-endpoints\\ManageEndpointTest\\ManageEndpointTest.csproj",
+        "projectName": "ManageEndpointTest",
+        "projectPath": "C:\\Users\\fossg\\RiderProjects\\manage-endpoints\\ManageEndpointTest\\ManageEndpointTest.csproj",
+        "packagesPath": "C:\\Users\\fossg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fossg\\RiderProjects\\manage-endpoints\\ManageEndpointTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\fossg\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\fossg\\RiderProjects\\manage-endpoints\\manage-endpoints\\manage-endpoints.csproj": {
+                "projectPath": "C:\\Users\\fossg\\RiderProjects\\manage-endpoints\\manage-endpoints\\manage-endpoints.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[3.5.1, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[3.5.1, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.9.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "NUnit.Analyzers": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.6.24328.19/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
