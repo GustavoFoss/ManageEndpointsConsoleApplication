@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "VrroeFuGeh0=",
+  "dgSpecHash": "yz3dzS2xhkg=",
   "success": true,
   "projectFilePath": "C:\\Users\\fossg\\RiderProjects\\manage-endpoints\\manage-endpoints\\manage-endpoints.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\fossg\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.0-preview.6.24327.7\\microsoft.extensions.dependencyinjection.9.0.0-preview.6.24327.7.nupkg.sha512",
+    "C:\\Users\\fossg\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0-preview.6.24327.7\\microsoft.extensions.dependencyinjection.abstractions.9.0.0-preview.6.24327.7.nupkg.sha512"
+  ],
   "logs": []
 }

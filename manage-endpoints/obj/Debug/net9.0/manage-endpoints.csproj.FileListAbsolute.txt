@@ -13,3 +13,7 @@ C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\
 C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\manage-endpoints.genruntimeconfig.cache
 C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\ref\manage-endpoints.dll
 C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\manage-endpoints.sourcelink.json
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\manage-endpoints.csproj.AssemblyReference.cache
+C:\Users\fossg\RiderProjects\manage-endpoints\manage-endpoints\obj\Debug\net9.0\manage-e.8063EB3C.Up2Date

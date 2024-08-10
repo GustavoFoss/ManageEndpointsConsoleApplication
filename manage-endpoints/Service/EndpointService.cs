@@ -39,7 +39,7 @@ public class EndpointService : BaseService<Endpoint>, IEndpointService
         _items.Remove(endpoint); 
     }
 
-    public new List<Endpoint> GetAllEndpoints()
+    public List<Endpoint> GetAllEndpoints()
     {
         return GetAllItems();
     }
