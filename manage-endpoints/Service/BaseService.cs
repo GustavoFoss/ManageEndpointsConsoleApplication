@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 namespace manage_endpoints.Service;
 
-public abstract class BaseService<T>
+public class BaseService<T>
 {
     protected readonly List<T> _items = new List<T>();
 

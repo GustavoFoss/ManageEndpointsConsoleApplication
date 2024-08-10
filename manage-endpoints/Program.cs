@@ -4,7 +4,8 @@ using manage_endpoints.Model;
 using manage_endpoints.Service;
 using manage_endpoints.Service.Interface;
 
-class Program
+namespace manage_endpoints;
+public class Program
 {
     private static IEndpointService _endpointService = new EndpointService();
 
